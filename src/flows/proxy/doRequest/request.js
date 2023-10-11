@@ -68,7 +68,7 @@ module.exports = {
 
       var contentType = response.headers['content-type'];
       var encoding = response.headers['content-encoding'];
-      var isImageFile = /(image)/.test(contentType);
+      var isImageFile = /(image)(\/.*)?/.test(contentType);
       var needUnZip = (encoding === 'gzip' || encoding === 'deflate') && !isImageFile;
       var isTextFile = /(text|xml|html|plain|json|javascript|css)/.test(contentType);
 
